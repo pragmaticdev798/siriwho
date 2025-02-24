@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siri Who?🗣</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Siri Who? :Voice Controlled Web App 🗣</h1>
+        
+        <div id="canvas-container"></div>
+        <p id="status">Say a Command....</p>
+        <div id="controlbox">hello, change me with your voice!</div>
+
+        <div id="controls-container">
+            <button id="startlistening">🎤Listen</button>
+            <button id="stoplistening">🔇Don't Listen</button>
+        </div>
+    </div>
+        
+    <div id="helppanel">
+        <div class="help-header">
+            <p>Try saying:</p>
+            <button id="toggle-help">✖️</button>
+        </div>
+        <ul id="commandlist">
+            <li onclick="speakCommand('make text bigger')">"Make text bigger"</li>
+            <li onclick="speakCommand('change color to blue')">"change color to blue"</li>
+            <li onclick="speakCommand('rotate the box')">"rotate the box"</li>
+            <li onclick="speakCommand('play music')">"play music"</li>
+            <li onclick="speakCommand('switch to dark mode')">"switch to dark mode"</li>
+            <li onclick="speakCommand('reset')">"reset"</li>
+        </ul>
+    </div>
+    
+    
+    <button id="mobile-help-toggle">❓</button>
+    
+    <script src="script.js"></script>
+</body>
+</html>

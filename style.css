@@ -1,0 +1,225 @@
+:root {
+    --primary-text-color: black;
+    --primary-bg-color: white;
+    --secondary-bg-color: #ff9800;
+    --border-radius: 10px;
+}
+
+body {
+    text-align: center;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    margin: 0;
+    padding: 0;
+    transition: background 0.5s, color 0.5s;
+    font-family: "VT323", serif;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    padding-bottom: 70px; 
+}
+
+#title {
+    font-size: clamp(1.8rem, 5vw, 2.9rem);
+    margin-bottom: 1rem;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+#canvas-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+#status {
+    font-size: clamp(1rem, 4vw, 1.7rem);
+    margin: 1rem 0;
+    color: #888;
+}
+
+#controlbox {
+    margin: 1rem auto;
+    padding: 1rem;
+    background: var(--secondary-bg-color);
+    color: var(--primary-text-color);
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    transition: 0.5s ease-in-out;
+    display: inline-block;
+    transform-origin: center;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+#controls-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+button {
+    background: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    border: solid 2px var(--primary-text-color);
+    padding: 0.5rem 1rem;
+    font-family: "VT323", serif;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: clamp(1rem, 4vw, 1.7rem);
+}
+
+button:hover {
+    background: grey;
+}
+
+#helppanel {
+    position: fixed;
+    background: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    padding: 0.8rem;
+    border-radius: var(--border-radius);
+    width: clamp(200px, 30vw, 300px);
+    text-align: left;
+    font-size: clamp(0.9rem, 3vw, 1.4rem);
+    border: 2px solid var(--primary-text-color);
+    z-index: 100;
+    max-height: 80vh;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
+    
+    top: 10px;
+    right: 10px;
+}
+
+.help-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.help-header p {
+    margin: 0;
+    font-size: clamp(1rem, 3vw, 1.7rem);
+}
+
+#toggle-help {
+    padding: 0.2rem 0.5rem;
+    font-size: 1.2rem;
+}
+
+#commandlist {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.8rem;
+}
+
+#commandlist li {
+    cursor: pointer;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: solid 2px var(--primary-text-color);
+    word-wrap: break-word;
+}
+
+#commandlist li:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+#mobile-help-toggle {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 101;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--secondary-bg-color);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--primary-text-color);
+    font-size: 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0.5rem;
+    }
+    
+    
+    #mobile-help-toggle {
+        display: flex;
+    }
+    
+    
+    #helppanel {
+        top: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 100%;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+        max-height: 40vh;
+        transform: translateY(100%);
+    }
+    
+    
+    #helppanel.help-open {
+        transform: translateY(0);
+    }
+    
+    
+    #commandlist {
+        padding-bottom: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    #title {
+        margin-bottom: 0.5rem;
+    }
+    
+    #controlbox {
+        margin: 0.5rem auto;
+        padding: 0.8rem;
+    }
+    
+    
+    #helppanel {
+        max-height: 50vh;
+    }
+}
+
+
+body.dark-mode {
+    --primary-text-color: white;
+    --primary-bg-color: black;
+}
